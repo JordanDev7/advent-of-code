@@ -1,3 +1,4 @@
+/* eslint-disable no-plusplus */
 const twoSumAndMultiply = (numbers, target) => {
     const numbersHashMap = {};
 
@@ -20,4 +21,23 @@ const twoSumAndMultiply = (numbers, target) => {
     return answer;
 };
 
-export default { twoSumAndMultiply };
+// eslint-disable-next-line consistent-return
+const threeSumAndMultiply = (numbers, target) => {
+    for (let i = 0; i < numbers.length; i++) {
+        const first = numbers[i];
+
+        for (let j = 0; j < numbers.length; j++) {
+            const second = numbers[j];
+
+            for (let k = 0; k < numbers.length; k++) {
+                const third = numbers[k];
+
+                if (first + second + third === target) {
+                    return first * second * third;
+                }
+            }
+        }
+    }
+};
+
+export default { twoSumAndMultiply, threeSumAndMultiply };

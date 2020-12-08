@@ -23,19 +23,23 @@ const twoSumAndMultiply = (numbers, target) => {
 
 // eslint-disable-next-line consistent-return
 const threeSumAndMultiply = (numbers, target) => {
+    numbers.sort((a, b) => a - b);
+
     for (let i = 0; i < numbers.length; i++) {
-        const first = numbers[i];
+        const current = numbers[i];
+        let next = i + 1;
+        let last = numbers.length - 1;
 
-        for (let j = 0; j < numbers.length; j++) {
-            const second = numbers[j];
+        while (next < last) {
+            const sum = current + numbers[next] + numbers[last];
 
-            for (let k = 0; k < numbers.length; k++) {
-                const third = numbers[k];
-
-                if (first + second + third === target) {
-                    return first * second * third;
-                }
+            if (sum === target) {
+                return current * numbers[next] * numbers[last];
             }
+
+            if (sum < target) next++;
+
+            if (sum > target) last--;
         }
     }
 };

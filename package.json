@@ -1,0 +1,38 @@
+{
+    "name": "advent-of-code",
+    "version": "1.0.0",
+    "description": "Advent of Code repository",
+    "author": "Jordan Antoniou",
+    "license": "None",
+    "main": "lib/index.js",
+    "homepage": "https://github.com/JordanDev7/advent-of-code#readme",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/JordanDev7/advent-of-code.git"
+    },
+    "bugs": {
+        "url": "https://github.com/JordanDev7/advent-of-code/issues"
+    },
+    "scripts": {
+        "babel": "babel src --out-dir lib --source-maps",
+        "build": "npm run babel",
+        "prettier": "prettier --write '{src/**/*,test/**/*,*}.{js,jsx,json}'",
+        "prelint": "npm run prettier",
+        "lint": "eslint --ext .js --ext .jsx src test",
+        "test": "npm run lint && jest --coverage",
+        "test:watch": "jest --watch"
+    },
+    "devDependencies": {
+        "@babel/cli": "^7.5.0",
+        "@babel/core": "^7.5.4",
+        "@babel/preset-env": "^7.5.4",
+        "babel-plugin-add-module-exports": "^1.0.2",
+        "eslint": "^6.0.1",
+        "eslint-config-airbnb-base": "^14.2.1",
+        "eslint-config-prettier": "^6.0.0",
+        "eslint-plugin-import": "^2.18.0",
+        "eslint-plugin-prettier": "^3.1.0",
+        "jest": "^24.8.0",
+        "prettier": "^1.7.0"
+    }
+}

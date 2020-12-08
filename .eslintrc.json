@@ -1,0 +1,16 @@
+{
+    "extends": ["airbnb-base", "plugin:prettier/recommended"],
+    "plugins": ["import", "prettier"],
+    "rules": {
+        "prettier/prettier": ["error"],
+        "import/prefer-default-export": "off"
+    },
+    "env": {
+        "jest": true
+    },
+    "settings": {
+        "react": {
+            "version": "14.7"
+        }
+    }
+}
